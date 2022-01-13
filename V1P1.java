@@ -1,5 +1,6 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
@@ -15,14 +16,20 @@ public class V1P1 {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 //        driver.get("https://google.com");
         driver.navigate().to("https://google.com");
-        System.out.println(driver.getCurrentUrl());
-        System.out.println(driver.getTitle());
-        driver.navigate().back();
-        Thread.sleep(2000);
-        driver.navigate().forward();
-        Thread.sleep(2000);
-        driver.navigate().refresh();
-        Thread.sleep(2000);
-        driver.close();
+        String org = driver.getWindowHandle();
+        driver.get("https://jar-download.com/artifact-search/webdrivermanager");
+//        System.out.println(driver.getCurrentUrl());
+//        System.out.println(driver.getTitle());
+//        driver.navigate().back();
+//        Thread.sleep(2000);
+//        driver.navigate().forward();
+//        Thread.sleep(2000);
+//        driver.navigate().refresh();
+//        Thread.sleep(2000);
+        driver.switchTo().newWindow(WindowType.WINDOW);
+        driver.switchTo().newWindow(WindowType.TAB);
+        driver.switchTo().window(org);
+//        driver.close();
+//        driver.quit();
     }
 }
