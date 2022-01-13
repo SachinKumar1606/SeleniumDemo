@@ -70,9 +70,15 @@ public class V1P1 {
 //        File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 //        FileUtils.copyFile(srcFile,new File("./image1.png"));
         driver.get("https://google.com");
-        WebElement ele = driver.findElement(By.cssSelector(".lnXdpd"));
-        File srcFile1 = ele.getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(srcFile1,new File("./image2.png"));
+//        WebElement ele = driver.findElement(By.cssSelector(".lnXdpd"));
+//        File srcFile1 = ele.getScreenshotAs(OutputType.FILE);
+//        FileUtils.copyFile(srcFile1,new File("./image2.png"));
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+
+        WebElement button = driver.findElement(By.name("btnI"));
+
+        js.executeScript("arguments[0].click();",button);
+        Thread.sleep(5000);
         driver.close();
     }
 }
