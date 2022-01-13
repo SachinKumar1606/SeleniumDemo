@@ -31,9 +31,9 @@ public class V1P1 {
 //        driver.switchTo().newWindow(WindowType.WINDOW);
 //        driver.switchTo().newWindow(WindowType.TAB);
 //        driver.switchTo().window(org);
-        driver.navigate().to("https://www.selenium.dev/selenium/docs/api/java/index.html?overview-summary.html");
-        driver.switchTo().frame("classFrame");
-        driver.findElement(By.linkText("org.openqa.selenium")).click();
+//        driver.navigate().to("https://www.selenium.dev/selenium/docs/api/java/index.html?overview-summary.html");
+//        driver.switchTo().frame("classFrame");
+//        driver.findElement(By.linkText("org.openqa.selenium")).click();
 //        webElement.click();
       /*  Thread.sleep(5000);
         driver.switchTo().defaultContent();
@@ -67,7 +67,12 @@ public class V1P1 {
     Thread.sleep(4000);
     driver.close();
          */
-        File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(srcFile,new File("./image1.png"));
+//        File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+//        FileUtils.copyFile(srcFile,new File("./image1.png"));
+        driver.get("https://google.com");
+        WebElement ele = driver.findElement(By.cssSelector(".lnXdpd"));
+        File srcFile1 = ele.getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(srcFile1,new File("./image2.png"));
+        driver.close();
     }
 }
