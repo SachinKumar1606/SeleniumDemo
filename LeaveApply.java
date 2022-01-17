@@ -22,7 +22,7 @@ public class LeaveApply {
         WebElement testDropDown = driver.findElement(By.id("assignleave_txtLeaveType"));
         Select dropdown = new Select(testDropDown);
         dropdown.selectByValue("9");
-        driver.findElement(By.xpath("//input[@id='dropdown.selectByValue(']")).sendKeys("2022-01-20");
+        driver.findElement(By.xpath("//input[@id='dropdown.selectByValue(']")).click();
 //        driver.findElement(By.xpath("//input[@id='assignleave_txtToDate']")).sendKeys("2022-01-22");
 //        WebElement testDropDown1 = driver.findElement(By.id("assignleave_duration_duration"));
 //        Select dropdown1 = new Select(testDropDown);

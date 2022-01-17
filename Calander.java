@@ -6,20 +6,17 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class Calander {
-    public static void main(String[] args) throws InterruptedException{
+    public static void main(String[] args){
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://seleniumpractise.blogspot.com/2016/08/how-to-handle-calendar-in-selenium.html");
-
-        driver.findElement(By.id("datepicker")).click();
-        Thread.sleep(1000);
-                /*
-        new WebDriverWait(driver, Duration.ofSeconds(5))
-                .until(ExpectedCondition.visibilityOfAllElementsLocatedBy(By.className("ui-datepicker-calendar")));
-         */
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.findElement(By.id("datepicker")).sendKeys("01/22/2022");
+        driver.close();
 
     }
 }
