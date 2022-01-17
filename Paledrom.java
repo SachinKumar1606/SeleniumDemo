@@ -1,6 +1,6 @@
 public class Paledrom {
     public static void main(String[] args) {
-        String s1="hiih";
+        String s1="12321";
         StringBuffer s2;
         s2 = new StringBuffer(s1);
         s2.reverse();
