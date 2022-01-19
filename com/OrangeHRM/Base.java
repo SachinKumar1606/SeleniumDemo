@@ -7,6 +7,8 @@ import org.testng.Assert;
 
 import java.time.Duration;
 
+import static org.openqa.selenium.Keys.ENTER;
+
 public class Base {
     static WebDriver driver;
     void login(){
@@ -70,6 +72,16 @@ public class Base {
         System.out.println(msg);
         System.out.println("================================================");
     }
+    void ApplyLeave() {
+        driver.findElement(By.id("menu_leave_viewLeaveModule")).click();
+        driver.findElement(By.name("leaveList[calFromDate]")).click();
+        driver.findElement(By.name("leaveList[calFromDate]")).sendKeys("2022-01-30"+ ENTER);
+        driver.findElement(By.id("calToDate")).click();
+        driver.findElement(By.id("calToDate")).sendKeys("2022-02-02"+ ENTER);
+        driver.findElement(By.id("leaveList_chkSearchFilter_checkboxgroup_allcheck")).click();
+        driver.findElement(By.id("leaveList_txtEmployee_empName")).sendKeys("Abdul Subhan Shaik" + ENTER);
+        driver.findElement(By.id("btnSearch")).click();
 
-
+    }
 }
+
