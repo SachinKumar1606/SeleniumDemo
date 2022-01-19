@@ -1,3 +1,4 @@
+package com.Assignmnet3;
 interface Iface1{
     default void show(){
         System.out.println("I am Interface1");

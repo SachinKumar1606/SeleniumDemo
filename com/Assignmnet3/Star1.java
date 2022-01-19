@@ -1,3 +1,4 @@
+package com.Assignmnet3;
 public class Star1 {
     public static void main(String[] args) {
         int n=5;

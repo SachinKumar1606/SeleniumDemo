@@ -1,3 +1,4 @@
+package com.Assignmnet3;
 public class Paledrom {
     public static void main(String[] args) {
         String s1="123321";

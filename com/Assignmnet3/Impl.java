@@ -1,6 +1,6 @@
 // Java program to demonstrate Multiple Inheritance
 // through default methods
-
+package com.Assignmnet3;
 // Interface 1
 interface PI1 {
 
