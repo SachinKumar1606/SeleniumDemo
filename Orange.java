@@ -16,7 +16,7 @@ public class Orange {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
 
-        String User = "usmer004600";
+        String User = "usmer"+ (int)(Math.random()*(99999-1001)+1000);
 
         driver.navigate().to("https://opensource-demo.orangehrmlive.com/index.php/auth/login");
         driver.findElement(By.id("txtUsername")).sendKeys("Admin");
@@ -28,18 +28,23 @@ public class Orange {
         driver.findElement(By.id("systemUser_userName")).sendKeys(User);
         driver.findElement(By.id("systemUser_password")).sendKeys("Wel@123come");
         driver.findElement(By.id("systemUser_confirmPassword")).sendKeys("Wel@123come");
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         driver.findElement(By.xpath("//input[@class='addbutton']")).click();
+        Thread.sleep(1000);
+//        WebElement msg = driver.findElement(By.xpath("//div[contains(text(),'Successfully Saved')]"));
+        //Assert value.....................
+        Boolean msg = driver.getPageSource().contains("Successfully Saved");
+        Assert.assertTrue(msg);
+        System.out.println("================================================");
+        System.out.println(msg);
+        System.out.println("================================================");
+        // String msg = driver.findElement(By.id("successBodyEdit")).getText();
         driver.findElement(By.id("searchSystemUser_userName")).sendKeys(User);
         driver.findElement(By.id("searchBtn")).click();
-        String msg = driver.findElement(By.id("successBodyEdit")).getText();
-        System.out.println(msg);
 //        Assert.assertEquals(msg,"Successfully Saved");
-//        System.out.println("================================================");
 //        Assert.assertTrue(msg.isDisplayed());
 //        System.out.println("================================================");
 //        Assert.assertEquals("Msg is incorrect", msg, "Successfully Saved");
-        System.out.println("================================================");
 
 //        Thread.sleep(5000);
         driver.close();

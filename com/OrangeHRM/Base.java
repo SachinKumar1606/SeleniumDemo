@@ -64,6 +64,11 @@ public class Base {
         driver.findElement(By.xpath("//input[@id='btnDelete']")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//input[@id='dialogDeleteBtn']")).click();
+        Boolean msg = driver.getPageSource().contains("Successfully Deleted");
+        Assert.assertTrue(msg);
+        System.out.println("================================================");
+        System.out.println(msg);
+        System.out.println("================================================");
     }
 
 
